@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="AutomationProiectFinal" verbose="1">
+
+    <listeners>
+        <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
+    </listeners>
+
+    <listeners>
+        <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test name="UI Tests - SauceDemo">
+        <classes>
+            <class name="tests.ui.LoginTest"/>
+            <class name="tests.ui.CartTest"/>
+            <class name="tests.ui.ProductTest"/>
+        </classes>
+    </test>
+
+    <test name="API Tests - DemoQA">
+        <classes>
+            <class name="tests.api.CreateAccountTest"/>
+            <class name="tests.api.GenerateTokenTest"/>
+            <class name="tests.api.GetBooksTest"/>
+        </classes>
+    </test>
+
+</suite>
