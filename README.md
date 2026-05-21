@@ -12,7 +12,7 @@ Proiect final pentru cursul de Testare Automata. Aplicatie de testare automata c
 | Tehnologie | Versiune | Rol |
 | --- | --- | --- |
 | Java | 25 | Limbaj de programare |
-| Maven | 3.x | Build & dependency management |
+| Maven | 3.9.12 | Build & dependency management |
 | Selenium WebDriver | 4.41.0 | Automatizare browser pentru testele UI |
 | TestNG | 7.12.0 | Framework de testare |
 | REST Assured | 6.0.0 | Testare API |
