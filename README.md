@@ -164,7 +164,7 @@ Genereaza folderul `allure-report/` cu fisierul `index.html` care poate fi desch
 
 ## Autor
 
-Proiect realizat de **Mihailescu** ca parte din cursul de Testare Automata.
+Proiect realizat de **Mihailescu Mircea Liviu** ca parte din cursul de Testare Automata.
 
 ## Licenta
 
