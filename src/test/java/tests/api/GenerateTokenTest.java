@@ -3,19 +3,12 @@ package tests.api;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import utils.BaseTestApi;
 
 import static org.testng.Assert.*;
 
-public class GenerateTokenTest {
-
-    private static final String BASE_URL = "https://demoqa.com";
-
-    @BeforeClass
-    public void setup() {
-        RestAssured.baseURI = BASE_URL;
-    }
+public class GenerateTokenTest extends BaseTestApi {
 
     // Test 3 Genereaza token de autentificare
     @Test

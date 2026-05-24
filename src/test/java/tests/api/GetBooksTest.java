@@ -3,21 +3,14 @@ package tests.api;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import utils.BaseTestApi;
 
 import java.util.List;
 
 import static org.testng.Assert.*;
 
-public class GetBooksTest {
-
-    private static final String BASE_URL = "https://demoqa.com";
-
-    @BeforeClass
-    public void setup() {
-        RestAssured.baseURI = BASE_URL;
-    }
+public class GetBooksTest extends BaseTestApi {
 
     // Test 5 Returneaza lista de carti din BookStore
     @Test
@@ -43,7 +36,6 @@ public class GetBooksTest {
     public void testGetBookByIsbnInvalid() {
         Response response = RestAssured
                 .given()
-                .baseUri(BASE_URL)
                 .when()
                 .get("/BookStore/v1/Book?ISBN=isbn_invalid_123")
                 .then()
