@@ -10,8 +10,6 @@ import utils.BaseTest;
 
 public class ProductTest extends BaseTest {
 
-    private static final String USERNAME = "standard_user";
-    private static final String PASSWORD = "secret_sauce";
     private static final String PRODUCT_NAME = "Sauce Labs Backpack";
 
     // Test 3 - Adauga un produs in cos din pagina de detaliu

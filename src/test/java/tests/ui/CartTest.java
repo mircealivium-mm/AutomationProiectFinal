@@ -9,9 +9,6 @@ import utils.BaseTest;
 
 public class CartTest extends BaseTest {
 
-    private static final String USERNAME = "standard_user";
-    private static final String PASSWORD = "secret_sauce";
-
     // Test 5 - Verifica delogare prin meniul lateral
     @Test
     public void testLogout() {

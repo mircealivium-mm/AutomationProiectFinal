@@ -18,7 +18,9 @@ import java.util.Map;
 public class BaseTest {
 
     protected WebDriver driver;
-    private static final String URL = "https://www.saucedemo.com/";
+    protected static final String URL = "https://www.saucedemo.com/";
+    protected static final String USERNAME = "standard_user";
+    protected static final String PASSWORD = "secret_sauce";
 
     @BeforeMethod
     public void setUp() {

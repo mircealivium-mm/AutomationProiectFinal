@@ -1,15 +1,11 @@
 package tests.ui;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pages.LoginPage;
 import utils.BaseTest;
 
 public class LoginTest extends BaseTest {
-
-    private static final String URL = "https://www.saucedemo.com/";
 
 
     // Test 1  Verifica login reusit cu credentiale valide
