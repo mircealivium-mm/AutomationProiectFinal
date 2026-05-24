@@ -3,9 +3,6 @@
 
 <suite name="AutomationProiectFinal" verbose="1">
 
-    <listeners>
-        <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
-    </listeners>
 
     <listeners>
         <listener class-name="org.testng.reporters.SuiteHTMLReporter"/>
