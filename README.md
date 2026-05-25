@@ -43,10 +43,8 @@ AutomationProiectFinal/
 │       │   │       ├── GenerateTokenTest.java
 │       │   │       └── GetBooksTest.java
 │       │   └── utils/
-                
-│       └── utils/
-│           ├── BaseTest.java       # Setup/teardown driver + screenshot UI
-│           └── BaseTestApi.java    # Setup baseURI pentru testele API
+│                   ├── BaseTest.java       # Setup/teardown driver + screenshot UI
+│                   └── BaseTestApi.java    # Setup baseURI pentru testele API
 │       └── resources/
 │           ├── testng.xml              # Configurare suite TestNG
 │           ├── allure.properties       # Configurare Allure
