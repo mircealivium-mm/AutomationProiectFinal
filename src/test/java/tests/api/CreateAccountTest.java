@@ -33,7 +33,7 @@ public class CreateAccountTest extends BaseTestApi {
                 "Status code asteptat 201 sau 406, dar a fost: " + statusCode);
     }
 
-    // Test 2 Verifica respingerea parolei slabe
+    // Test 2 Verifica respingerea parolei invalida
     @Test
     public void testCreateAccountInvalidPassword() {
         String body = "{\n" +

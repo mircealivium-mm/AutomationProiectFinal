@@ -12,7 +12,7 @@ public class ProductPage extends BasePage {
     @FindBy(css = "[data-test='inventory-item-price']")
     private WebElement productPrice;
 
-    @FindBy(id = "add-to-cart")
+    @FindBy(id = "add-to-cart-sauce-labs-backpack")
     private WebElement addToCartButton;
 
     public ProductPage(WebDriver driver) {
