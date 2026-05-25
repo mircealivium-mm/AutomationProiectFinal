@@ -43,7 +43,10 @@ AutomationProiectFinal/
 │       │   │       ├── GenerateTokenTest.java
 │       │   │       └── GetBooksTest.java
 │       │   └── utils/
-│       │       └── BaseTest.java       # Setup/teardown driver + screenshot
+                
+│       └── utils/
+│           ├── BaseTest.java       # Setup/teardown driver + screenshot UI
+│           └── BaseTestApi.java    # Setup baseURI pentru testele API
 │       └── resources/
 │           ├── testng.xml              # Configurare suite TestNG
 │           ├── allure.properties       # Configurare Allure
@@ -166,6 +169,4 @@ Genereaza folderul `allure-report/` cu fisierul `index.html` care poate fi desch
 
 Proiect realizat de **Mihailescu Mircea Liviu** ca parte din cursul de Testare Automata.
 
-## Licenta
 
-Proiect realizat in scop educational.
