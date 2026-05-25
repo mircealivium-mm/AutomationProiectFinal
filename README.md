@@ -56,6 +56,17 @@ AutomationProiectFinal/
 └── pom.xml
 ```
 
+## Strategia de testare
+
+Am ales scenarii care acopera:
+
+- **Happy path** — fluxuri pozitive (login valid, adaugare produs, generare token)
+- **Negative tests** — verificarea respingerii inputurilor invalide (parola gresita, parola slaba, credentiale invalide, ISBN invalid)
+- **Flux end-to-end** — `testAddProductToCart` navigheaza prin 4 pagini, simuland user complet
+- **Operatiuni CRUD parțiale** — Creare (cont), Citire (lista carti)
+- **Schema validation** — `testBookHasRequiredFields` verifica contractul API
+- **State changes** — adaugare + eliminare produs din cos, badge counter
+
 ## Scenarii de testare
 
 ### Teste UI (SauceDemo) - 8 teste
@@ -157,11 +168,34 @@ Genereaza folderul `allure-report/` cu fisierul `index.html` care poate fi desch
 - **Screenshot la failure** - prin adnotarea Allure `@Attachment` in `BaseTest`
 - **Constants** - URL-uri si date de test definite ca `private static final`
 
+## Stabilitatea testelor
+
+Pentru a evita testele flaky, am implementat:
+
+- **Explicit Waits** in loc de implicit waits — `WebDriverWait` cu timeout 10s pe `ExpectedConditions` specifice (`elementToBeClickable`, `visibilityOf`, etc.)
+- **PageFactory** pentru initializare lazy a elementelor
+- **JavascriptExecutor** la actiuni cu animatii (meniu hamburger) pentru a evita click-uri ratate
+- **Driver fresh per test** — `@BeforeMethod` deschide un browser nou, `@AfterMethod` il inchide, evitand state leakage intre teste
+- **Screenshot automat la failure** — debugging rapid prin Allure attachments
+- **try/catch** la operatii I/O (screenshot) — eroare la atasare nu pica testul
+
 ## Bug-uri identificate
 
 | # | Test | Descriere | Severitate |
 | --- | --- | --- | --- |
 | 1 | `testAddProductToCart` | Selectorul `#add-to-cart` pe pagina de detaliu produs e instabil. Pe SauceDemo, butonul are uneori un ID specific produsului (`add-to-cart-sauce-labs-backpack`). | Medie |
+
+### Reproducere bug #1
+
+1. Login pe SauceDemo cu `standard_user / secret_sauce`
+2. Click pe produsul "Sauce Labs Backpack" din inventory
+3. Pe pagina de detaliu, butonul Add to Cart are ID specific produsului, nu generic
+
+**Comportament asteptat:** Toate produsele ar trebui sa aiba acelasi pattern de ID pentru consistenta.
+
+**Comportament observat:** ID-ul include numele produsului — necesar selector dinamic.
+
+**Solutie propusa:** Folosire selector CSS cu prefix: `[data-test^='add-to-cart']`
 
 ## Autor
 
